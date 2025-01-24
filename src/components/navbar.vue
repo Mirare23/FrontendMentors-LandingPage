@@ -3,17 +3,17 @@
     <div
       class="flex items-center justify-between bg-transparent max-lg:py-10 lg:py-20 max-lg:px-8"
     >
-      <div class="flex-none">
+      <RouterLink to="/" class="flex-none">
         <img src="/img/logo.svg" alt="" />
-      </div>
+      </RouterLink>
       <div class="flex gap-5 max-lg:hidden">
-        <router-link
+        <RouterLink
           v-for="link in listLinks"
           :to="link.to"
           class="font-semibold"
         >
           {{ link.name }}
-        </router-link>
+        </RouterLink>
       </div>
       <button class="btn max-lg:hidden">Get Started</button>
       <button
@@ -29,7 +29,7 @@
         v-if="mobileNav"
         class="absolute flex flex-col items-center self-center py-4 space-y-6 bg-white sm:self-end sm:w-auto left-6 right-6 drop-shadow-md"
       >
-        <router-link v-for="items in listLinks">{{ items.name }}</router-link>
+        <RouterLink v-for="items in listLinks">{{ items.name }}</RouterLink>
       </div>
     </div>
   </nav>
@@ -37,27 +37,12 @@
 
 <script setup lang="ts">
 import { ref } from "vue"
+import { RouterLink } from "vue-router";
 const mobileNav = ref(false)
 const listLinks = ref([
   {
-    to: "/",
-    name: "Pricing",
-  },
-  {
-    to: "/",
-    name: "Product",
-  },
-  {
-    to: "/",
+    to: "/about",
     name: "About Us",
-  },
-  {
-    to: "/",
-    name: "Careers",
-  },
-  {
-    to: "/",
-    name: "Community",
   },
 ])
 </script>
