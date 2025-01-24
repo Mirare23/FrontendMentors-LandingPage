@@ -29,7 +29,7 @@
         v-if="mobileNav"
         class="absolute flex flex-col items-center self-center py-4 space-y-6 bg-white sm:self-end sm:w-auto left-6 right-6 drop-shadow-md"
       >
-        <RouterLink v-for="items in listLinks">{{ items.name }}</RouterLink>
+        <RouterLink v-for="items in listLinks" :to="items.to">{{ items.name }}</RouterLink>
       </div>
     </div>
   </nav>
